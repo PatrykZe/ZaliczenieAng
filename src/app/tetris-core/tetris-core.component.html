@@ -1,0 +1,36 @@
+<div id="menu-game" *ngIf="!display">
+<h1>Tetris Game</h1> 
+<h2>Some quick introductory text</h2>
+    
+  <input
+  placeholder="Name"
+  name="name"
+  [(ngModel)]="userName"
+  />
+  
+  <input
+  placeholder="Email address"
+  name="Address"
+  [(ngModel)]="userAdress"
+  />
+  
+  <button 
+          (click)="onClick()">
+      Start Game
+  </button>
+  
+  <h4 *ngIf="error">
+    Enter your name and E-mail address correctly!
+  </h4>
+</div>
+
+  <div id="app-game" *ngIf="display">
+    <p>{{ [userName] + ', welcome in the Game' }}</p>
+    <app-app-game></app-app-game>  
+  </div>
+  
+
+
+   
+   
+  

@@ -1,0 +1,59 @@
+<p>{{'Game status is: ' + [state] }}</p>
+<p>{{'Game points: ' + [points] }}</p>
+<p>{{'Time spend in game: ' + [time10 | date:'mm:ss' ] }}</p>
+<tetris-core #game
+    [class.black-and-white]="bw"
+    tileSize="20px"
+    (lineCleared)="onLineCleared()"
+    (gameOver)="onGameOver()"></tetris-core>
+    <button (click)="refresh()">Exit Game</button>
+    
+<table class="controls">
+    <tr>
+        <td><button (click)="game.actionStart(); state = 'Running'; TimeStart()">Start</button></td>
+        <td><button (click)="game.actionStop(); state = 'Paused'; TimeStop()">Stop</button></td>
+        <td><button (click)="game.actionReset(); state = 'Ready'">Reset</button></td>
+        <td></td>
+    </tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr>
+        <td></td>
+        <td><button (click)="game.actionRotate()">Rotate</button></td>
+    </tr>
+    <tr>
+        <td><button (click)="game.actionLeft()">Left</button></td>
+        <td></td>
+        <td><button (click)="game.actionRight()">Right</button></td>
+
+    </tr>
+    <tr>
+        <td></td>
+        <td><button (click)="game.actionDown()">Down</button></td>
+    </tr>
+    <tr style="height: 20px">
+        <td></td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <button *ngIf="!bw" class="bw" (click)="bw = true">Go B/W !</button>
+            <button *ngIf="bw" class="colors" (click)="bw = false">
+                <span class="green">no, </span>
+                <span>back to</span>
+                <span class="red">colors</span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+
+
+   
+
+
+
+
+
+

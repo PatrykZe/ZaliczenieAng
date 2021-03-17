@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "mousetrap": "registry:dt/mousetrap#1.5.0+20170106203657"
+  }
+}

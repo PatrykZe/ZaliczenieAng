@@ -1,21 +1,21 @@
-<div id="menu-game" *ngIf="!display">
+<div id="menu-game">
 <h1>Tetris Game</h1> 
-<h2>Some quick introductory text</h2>
+<h2>Enter your Name and email address</h2>
     
   <input
   placeholder="Name"
   name="name"
-  [(ngModel)]="userName"
+  [(ngModel)]="_DATA.name"
   />
   
   <input
   placeholder="Email address"
   name="Address"
-  [(ngModel)]="userAdress"
+  [(ngModel)]="_DATA.email"
   />
   
   <button 
-          (click)="onClick()">
+          (click)="onClick(); addItem()">
       Start Game
   </button>
   
@@ -24,11 +24,6 @@
   </h4>
 </div>
 
-  <div id="app-game" *ngIf="display">
-    <p>{{ [userName] + ', welcome in the Game' }}</p>
-    <app-app-game></app-app-game>  
-  </div>
-  
 
 
    

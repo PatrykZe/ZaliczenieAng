@@ -1,12 +1,12 @@
+<p>{{ [text[0].name] + ', welcome in the Game' }}</p>
 <p>{{'Game status is: ' + [state] }}</p>
 <p>{{'Game points: ' + [points] }}</p>
 <p>{{'Time spend in game: ' + [time10 | date:'mm:ss' ] }}</p>
 <tetris-core #game
-    [class.black-and-white]="bw"
+
     tileSize="20px"
-    (lineCleared)="onLineCleared()"
-    (gameOver)="onGameOver()"></tetris-core>
-    <button (click)="refresh()">Exit Game</button>
+    (lineCleared)="onLineCleared()"></tetris-core>
+    <button (click)="Back()">Exit Game</button>
     
 <table class="controls">
     <tr>
@@ -37,23 +37,7 @@
     </tr>
     <tr>
         <td colspan="3">
-            <button *ngIf="!bw" class="bw" (click)="bw = true">Go B/W !</button>
-            <button *ngIf="bw" class="colors" (click)="bw = false">
-                <span class="green">no, </span>
-                <span>back to</span>
-                <span class="red">colors</span>
-            </button>
+            
         </td>
     </tr>
 </table>
-
-
-
-
-   
-
-
-
-
-
-

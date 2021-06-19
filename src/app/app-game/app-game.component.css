@@ -1,0 +1,23 @@
+
+.contrast {
+            color: white;
+            background: white;
+            border: 2px solid black;
+            
+    }
+       
+
+
+.controls {
+    float: center;
+}
+
+tetris-core {
+    display: inline-block;
+    background: white;
+}
+
+.scores {
+    float: right;
+   
+}

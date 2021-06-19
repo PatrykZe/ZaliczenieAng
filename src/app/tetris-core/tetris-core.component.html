@@ -1,18 +1,30 @@
 <div id="menu-game">
 <h1>Tetris Game</h1> 
 <h2>Enter your Name and email address</h2>
-    
+  
+<form [formGroup]="nameForm">
   <input
   placeholder="Name"
+  type='text' 
   name="name"
-  [(ngModel)]="_DATA.name"
-  />
-  
+  formControlName="name"
+  />	
+ 
   <input
-  placeholder="Email address"
-  name="Address"
-  [(ngModel)]="_DATA.email"
+  placeholder="Auth code"
+  name="Auth"
+  type='text'
+  formControlName="auth"
   />
+
+  <label for="Colory">Color</label>
+  <select id="Colory">
+    <option  value="Blue">Blue</option>
+    <option value="Red">Red</option>
+    <option value="Yellow">Yellow</option>
+  </select>
+
+
   
   <button 
           (click)="onClick(); addItem()">
@@ -22,10 +34,19 @@
   <h4 *ngIf="error">
     Enter your name and E-mail address correctly!
   </h4>
+
+</form>
+
+<select (change)="onColorChange($event)">
+  <option *ngFor="let color of availableColors">
+      {{ color }}
+  </option>
+</select>
+
+
+<!-- <label for="">Accessibility</label>
+  <select id="Accessibility">
+    <option  value="normal">Normal</option>
+    <option value="Highcontrast">High contrast</option>
+  </select> -->
 </div>
-
-
-
-   
-   
-  

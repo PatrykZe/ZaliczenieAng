@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 export interface UserData {
   name: string;
-  email: string;
+  
 }
 
 

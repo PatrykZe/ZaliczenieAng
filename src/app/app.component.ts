@@ -10,7 +10,7 @@ export class AppComponent  {
   @Input() display: boolean;
 
   onClick() {
-    console.log(this.display);
+    
   }
   
 }

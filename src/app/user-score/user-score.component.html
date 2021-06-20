@@ -2,10 +2,8 @@
 
 <div class="row">
   <div class="col">
-    <div class="row Score-item" *ngFor="let scores of data">
-      {{scores.name}}, {{scores.score}} 
-        
-      
+      <div *ngFor="let user of data | sort:'score':sortDirection">
+        <p>{{ user.name }}, {{ user.score }} </p>    
     </div>
   </div>
 </div>

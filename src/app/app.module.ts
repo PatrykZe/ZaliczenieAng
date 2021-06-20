@@ -11,13 +11,15 @@ import { RouterModule } from '@angular/router';
 import { PalyerDataService} from '../palyer-data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserScoreComponent } from './user-score/user-score.component';
+import { SortPipe } from './sort.pipe';
 // import {UserInfoService} from '../user-info-service.service';
 @NgModule({
   declarations: [
     AppComponent,
     AppGameComponent,
     TetrisCoreComponent,
-    UserScoreComponent
+    UserScoreComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfoService } from '../../user-info-service.service';
+import { users } from "../definitions";
 
 @Component({
   selector: 'app-user-score',
@@ -7,7 +8,8 @@ import { UserInfoService } from '../../user-info-service.service';
   styleUrls: ['./user-score.component.css']
 })
 export class UserScoreComponent implements OnInit {
-  public data = [];
+  public data : Array<users> = [];
+  public sortDirection: string = "asc";
   constructor(private _score: UserInfoService) {
     this.loadScores();
   }
